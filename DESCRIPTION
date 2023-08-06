@@ -11,5 +11,12 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports:
-  dplyr
+  dplyr,
+  ggplot2,
+  hdf5r,
+  jsonlite,
+  ncdf4,
+  raster,
+  readxl,
+  xml2
 
