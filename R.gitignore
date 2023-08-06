@@ -24,7 +24,7 @@
 /src/*.so
 /src/*.dll
 /_pkgdown.yml
-/docs
+./docs
 /pkgdown
 /.gh-pages
-/data
+./data

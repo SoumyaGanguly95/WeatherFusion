@@ -1,4 +1,4 @@
-#' Fuse two weather time series datasets
+#' Fuse two weather or storm datasets
 #'
 #' This function fuses two weather datasets based on the specified method and time index (if required).
 #'
@@ -32,7 +32,7 @@ fuse_weather_data <- function(dataset1, dataset2, fusion_method = "average", tim
     stop("Error: Invalid fusion method. Available methods are 'average', 'weighted', or 'ensemble'.")
   }
 
-  # Perform weather data fusion based on the chosen method
+  # Perform weather or storm data fusion based on the chosen method
   fused_dataset <- switch(
     fusion_method,
     "average" = (dataset1 + dataset2) / 2,  # Simple average fusion
@@ -41,4 +41,22 @@ fuse_weather_data <- function(dataset1, dataset2, fusion_method = "average", tim
   )
 
   return(fused_dataset)
+}
+
+#' Fuse weather data with storm or forecast data
+#'
+#' This function fuses weather data with storm or forecast data based on the specified method and time index (if required).
+#'
+#' @param weather_data Weather dataset as a data.frame or tibble.
+#' @param other_data Storm or forecast dataset as a data.frame or tibble.
+#' @param fusion_method Method to fuse the datasets ("average", "weighted", or "ensemble").
+#' @param time_index The common time index to be used for fusion (optional).
+#' @return Fused weather dataset as a data.frame or tibble.
+#' @examples
+#' fused_data <- fuse_weather_and_other(weather_data, storm_data, fusion_method = "average")
+#' fused_data <- fuse_weather_and_other(weather_data, forecast_data, fusion_method = "weighted")
+#'
+fuse_weather_and_other <- function(weather_data, other_data, fusion_method = "average", time_index = NULL) {
+  fused_data <- fuse_weather_data(weather_data, other_data, fusion_method, time_index)
+  return(fused_data)
 }
