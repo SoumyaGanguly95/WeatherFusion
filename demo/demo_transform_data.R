@@ -1,12 +1,10 @@
-# Load the R package containing your functions
-library(WeatherFusion)
+library(WeatherFusion)  # Load your R package
 
-# Load weather forecast data from a CSV file
-file_path <- "path/to/your/weather_data.csv"
-weather_data <- load_weather_forecast(file_path)
+# Transform weather data
+transformed_weather_data <- transform_weather_data(weather_data, "temperature", "Fahrenheit", "timestamp", "%Y-%m-%d %H:%M:%S")
 
-# Perform data transformation on the loaded weather data
-transformed_data <- transform_weather_data(weather_data)
+# Transform storm data
+transformed_storm_data <- transform_storm_data(storm_data, "windspeed", "temperature", "Fahrenheit", "timestamp", "%Y-%m-%d %H:%M:%S")
 
-# Display the transformed data
-head(transformed_data)
+# Transform weather forecast data
+transformed_forecast_data <- transform_weather_forecast_data(forecast_data, "accuracy", "timestamp", "%Y-%m-%d %H:%M:%S")

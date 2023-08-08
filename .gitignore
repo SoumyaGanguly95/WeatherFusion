@@ -47,7 +47,7 @@ vignettes/*.pdf
 docs/
 
 # data files
-data/
+extdata/
 
 # translation temp files
 po/*~
