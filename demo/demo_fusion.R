@@ -19,7 +19,8 @@ demo_weather_and_storm_or_forecast_fusion <- function() {
   # Load required packages and data
   library(WeatherFusion)  # Replace WeatherFusion with the actual name of your package
   data("data/USAWeatherEvents/WeatherEvents_Jan2016-Dec2022.csv")  # Load example weather data
-  data("data/NOAAStormDataUSA/Storms_2020.csv") # Load example storm data
+  data("data/NOAAStormDataUSA/Storms_2020.csv")
+  # Load example storm data
 
 
   # Perform weather and storm/forecast data fusion
